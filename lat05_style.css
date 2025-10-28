@@ -1,0 +1,45 @@
+header {
+  background: #038ade;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 20px;
+}
+
+aside {
+  flex: 20%;
+  background: #222;
+}
+
+section.main {
+  flex: 80%;
+  background: #fff;
+  min-height: 530px;
+  padding: 15px 20px;
+}
+
+footer {
+  background-color: #ccc;
+  color: #555;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu {
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px dotted #444;
+}
+
+.menu a {
+  display: block;
+  padding: 20px 20px;
+  list-style: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: #000;
+}

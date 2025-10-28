@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lat05_style.css" />
+    <title>PenumpangAngkot</title>
+    <style>
+      #debugPanel {
+        background: #111;
+        color: #0f0;
+        font-family: monospace;
+        padding: 10px;
+        height: 200px;
+        overflow-y: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 5px #0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Aplikasi Penumpang Angkot</header>
+    <aside>
+      <ul class="menu">
+        <li class="tom"></li>
+        <li class="tom"></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </aside>
+    <section class="main">
+      <h1>Selamat Datang di Aplikasi</h1>
+      <br />
+      <h3>Anda Telah Login sebagai Admin</h3>
+      <div class="debugPanel"></div>
+    </section>
+    <footer>Copyright &copy; RAZdeKing</footer>
+
+    <script src="lat05_script.js">
+            // Buat panel log di halaman
+      const panel = document.getElementById("debugPanel");
+
+      // Simpan log asli
+      const logAsli = console.log;
+
+      // Ubah fungsi console.log
+      console.log = function (...pesan) {
+        // Panggil log asli di console browser
+        logAsli(...pesan);
+
+        // Tambahkan ke panel HTML
+        const waktu = new Date().toLocaleTimeString();
+        const teks = `[${waktu}] ${pesan.join(" ")}`;
+        const p = document.createElement("div");
+        p.textContent = teks;
+        panel.appendChild(p);
+
+        // Scroll otomatis ke bawah
+        panel.scrollTop = panel.scrollHeight;
+      };
+    </script>
+  </body>
+</html>
